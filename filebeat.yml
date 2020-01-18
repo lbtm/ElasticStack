@@ -1,0 +1,13 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - "/usr/share/filebeat/logs/*.log"
+  fields:
+    doc_type: workshop-logs-json
+  fields_under_root: true
+
+#----------------------------- Logstash output ---------------------------------
+output.logstash:
+  enabled: true
+  # The Logstash hosts
+  hosts: ["logstash:5044"]
