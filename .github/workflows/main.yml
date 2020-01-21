@@ -9,11 +9,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      
     - name: Build the docker-compose stack
       run: docker-compose up -d --build
+      
     - name: Check running containers
       run: docker ps -a
+      
     - name: Check logs
       run: docker logs elasticstack_elasticsearch_1
+      
+    - name: Sleep for 60 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '60s'
+
     - name: Run test ES
       run: docker exec -i elasticstack_elasticsearch_1 curl -I 0.0.0.0:9200
