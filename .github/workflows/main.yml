@@ -9,9 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Build the docker-compose stack
+      run: docker-compose up -d --build
+    - name: Wait 1min pls
+    - uses: lbtm/wait-action@master
+      with:
+      time: '60s'
+    - name: Check running containers
+      run: docker ps -a
+    - name: Check logs
+      run: docker logs elasticsearch
+    - name: Run test ES
+      run: docker exec -i elasticsearch curl -I localhost:9200
