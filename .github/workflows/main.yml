@@ -17,4 +17,4 @@ jobs:
       run: docker ps -a
 
     - name: Run test Kibana
-      run: docker exec -i elasticstack_kibana_1 curl -I localhost:5601
+      run: docker exec -i elasticstack_kibana_1 curl -I 127.0.0.1:5601
