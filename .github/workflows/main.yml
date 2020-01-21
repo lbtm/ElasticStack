@@ -18,18 +18,6 @@ jobs:
       
     - name: Check running containers
       run: docker ps -a
-      
-    - uses: getong/elasticsearch-action@v1
-      with:
-        elasticsearch version: '7.5.1'
-        host port: 9200
-        container port: 9200
-        discovery type: 'single-node'
-      
-    - name: Sleep for 60 seconds
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '60s'
 
-    - name: Run test ES
-      run: docker exec -i elasticstack_elasticsearch_1 curl -I 0.0.0.0:9200
+    - name: Run test Kibana
+      run: docker exec -i elasticstack_kibana_1 curl -I 0.0.0.0:5601
