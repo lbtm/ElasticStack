@@ -16,4 +16,4 @@ jobs:
     - name: Check logs
       run: docker logs elasticstack_elasticsearch_1
     - name: Run test ES
-      run: docker exec -i elasticstack_elasticsearch_1 curl -I localhost:9200
+      run: docker exec -i elasticstack_elasticsearch_1 curl -I 0.0.0.0:9200
