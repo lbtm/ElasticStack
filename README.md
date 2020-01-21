@@ -1,5 +1,7 @@
-# ElasticStack
+# ElasticStack [![Actions Status](https://github.com/lbtm/ElasticStack/workflows/CI/badge.svg)](https://github.com/lbtm/ElasticStack/actions)
+
 ELK with Filebeat easy way by docker-compose
+
 
 # Setup Elastic Stack 7.5.x
 Start a Elastic Stack environment
