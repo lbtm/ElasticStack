@@ -19,8 +19,12 @@ jobs:
     - name: Check running containers
       run: docker ps -a
       
-    - name: Check logs
-      run: docker logs elasticstack_elasticsearch_1
+    - uses: getong/elasticsearch-action@v1
+      with:
+        elasticsearch version: '7.5.1'
+        host port: 9200
+        container port: 9200
+        discovery type: 'single-node'
       
     - name: Sleep for 60 seconds
       uses: jakejarvis/wait-action@master
