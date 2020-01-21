@@ -10,6 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
       
+    - name: Fix vm.max_map_count
+      run: sysctl -w vm.max_map_count=262144
+      
     - name: Build the docker-compose stack
       run: docker-compose up -d --build
       
