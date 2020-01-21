@@ -11,10 +11,10 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the docker-compose stack
       run: docker-compose up -d --build
-    - name: Wait 1min pls
-    - uses: lbtm/wait-action@master
+    - name: 1min pls
+    - uses: jakejarvis/wait-action@master
       with:
-      time: '60s'
+        time: '60s'
     - name: Check running containers
       run: docker ps -a
     - name: Check logs
