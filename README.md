@@ -3,7 +3,7 @@
 ELK with Filebeat easy way by docker-compose
 
 
-# Setup Elastic Stack 7.5.x
+# Setup Elastic Stack 7.10.x
 Start a Elastic Stack environment
 * Kibana (:5601)
 * Elasticsearch (:9200)
@@ -11,12 +11,11 @@ Start a Elastic Stack environment
 * Filebeat
 
 # Requirement 
-## Install docker >= 18.09.x
+## Install docker >= 20.10.x
 Have docker install on your local machine.  
 Refer to docker installation page :   
-* Fedora : https://docs.docker.com/install/linux/docker-ce/fedora/  
-* Ubuntu : https://docs.docker.com/install/linux/docker-ce/ubuntu/
-
+* [Fedora](https://docs.docker.com/engine/install/fedora/)
+* [Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 ## Install docker-compose
 ```bash
 #Fedora:
@@ -24,8 +23,10 @@ dnf install -y docker-compose
 docker-compose --version
 
 #Ubuntu:
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+## Run the following command to download Compose (v1.27.4):
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
 ```
 
