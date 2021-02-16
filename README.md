@@ -3,7 +3,7 @@
 ELK with Filebeat easy way by docker-compose
 
 
-# Setup Elastic Stack 7.10.x
+# Setup Elastic Stack 7.11.x
 Start a Elastic Stack environment
 * Kibana (:5601)
 * Elasticsearch (:9200)
